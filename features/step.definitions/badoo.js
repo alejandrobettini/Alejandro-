@@ -2,6 +2,7 @@ const { Builder, By, Key, until, Keys } = require('selenium-webdriver');
 const { Given, When, Then, setDefaultTimeout } = require('cucumber');
 var webdriver = require('selenium-webdriver');
 require('chromedriver');
+const { WElements} = require(`${process.cwd()}/features/pages/badoo.js`);
 
 var driver;
 setDefaultTimeout(600 * 1000);
@@ -14,15 +15,15 @@ await this.driver.get ('http://www.badoo.com');
 });
 
 When(/^iniciar sesion en badoo con usuario "(.*)" y contraseña "(.*)"$/, async function (usuario, contraseña) {
-    await this.driver.wait(until.elementLocated(By.xpath('//*[@id="header"]/div/div[2]/div/div/a')));
-    let WEbotonConectar = await this.driver.findElement(By.xpath('//*[@id="header"]/div/div[2]/div/div/a'));
+    await this.driver.wait(until.elementLocated(By.xpath(WElements.botonConectar)));
+    let WEbotonConectar = await this.driver.findElement(By.xpath(WElements.botonConectar));
     await WEbotonConectar.click();
-    await this.driver.wait (until.elementLocated(By.xpath('//input[@name="email"]')));
-    let WEusuario = await this.driver.findElement(By.xpath('//input[@name="email"]'));
+    await this.driver.wait (until.elementLocated(By.xpath(WElements.email)));
+    let WEusuario = await this.driver.findElement(By.xpath(WElements.email));
     await WEusuario.sendKeys(usuario);
-    let WEcontraseña = await this.driver.findElement(By.xpath('//input[@type="password"]'));
+    let WEcontraseña = await this.driver.findElement(By.xpath(WElements.contraseña));
     await WEcontraseña.sendKeys(contraseña);
-    let WEiniciarsesion = await this.driver.findElement(By.xpath('//button[@type="submit"]'));
+    let WEiniciarsesion = await this.driver.findElement(By.xpath(WElements.iniciarSesion));
     await WEiniciarsesion.click();
 
     

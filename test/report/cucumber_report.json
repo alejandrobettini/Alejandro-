@@ -1,0 +1,62 @@
+[
+  {
+    "description": "    Descripcion de la feature (opcional)",
+    "keyword": "Feature",
+    "name": "Badoo",
+    "line": 1,
+    "id": "badoo",
+    "tags": [],
+    "uri": "features\\badoo.feature",
+    "elements": [
+      {
+        "id": "badoo;badoobuitreo",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Badoobuitreo",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "abrir la pagina de badoo",
+            "match": {
+              "location": "features\\step.definitions\\badoo.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8301000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "iniciar sesion en badoo con usuario \"alejandro.javierbettini@hotmail.com\" y contraseña \"bla bla\"",
+            "match": {
+              "location": "features\\step.definitions\\badoo.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1080000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "mandar corazones",
+            "match": {
+              "location": "features\\step.definitions\\badoo.js:32"
+            },
+            "result": {
+              "status": "pending",
+              "duration": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
