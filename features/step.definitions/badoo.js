@@ -25,6 +25,7 @@ When(/^iniciar sesion en badoo con usuario "(.*)" y contraseña "(.*)"$/, async 
     await WEcontraseña.sendKeys(contraseña);
     let WEiniciarsesion = await this.driver.findElement(By.xpath(WElements.iniciarSesion));
     await WEiniciarsesion.click();
+    
 
     
 });
